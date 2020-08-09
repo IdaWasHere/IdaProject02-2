@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>用户认证审核列表</title>
+</head>
+<body>
+<table>
+    <thead>
+    <tr>
+        <th>企业名称</th>
+        <th>认证用户</th>
+        <th>用户邮箱</th>
+        <th>操作</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="identity:${identitys}">
+        <td th:text="${identity.getCompanyname()}"></td>
+        <td th:text="${identity.getUsername()}"></td>
+        <td th:text="${identity.getEmail()}"></td>
+        <td>
+            <a th:href="@{/agreeIdentity(uid=${identity.getUid()},cid=${identity.getCid()},email=${identity.getEmail()})}">认证通过</a>
+            <a th:href="@{/refuseIdentity/}+${identity.getEmail()}">认证不通过</a>
+        </td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>

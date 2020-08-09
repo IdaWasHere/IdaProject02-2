@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>用户列表</title>
+</head>
+<body>
+<table>
+    <thead>
+    <tr>
+        <th>编号</th>
+        <th>用户名</th>
+        <th>密码</th>
+        <th>邮箱</th>
+        <th>年龄</th>
+        <th>性别</th>
+        <th>操作</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="user:${users}">
+        <td th:text="${user.getId()}"></td>
+        <td th:text="${user.getUsername()}"></td>
+        <td th:text="${user.getPassword()}"></td>
+        <td th:text="${user.getEmail()}"></td>
+        <td th:text="${user.getAge()}"></td>
+        <td th:text="${user.getSex()}"></td>
+        <td>
+            <a th:href="@{/black/}+${user.getId()}">列入黑名单</a>
+        </td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>

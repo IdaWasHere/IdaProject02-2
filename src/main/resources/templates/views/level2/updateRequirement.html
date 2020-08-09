@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>修改需求</title>
+</head>
+<body>
+<form th:action="@{/updateRequirement}" method="post">
+    <input type="hidden" name="id" th:value="${requirementById.getId()}">
+    <div>
+        标题：<input th:value="${requirementById.getTitle()}" type="text" name="title">
+    </div>
+    <div>
+        简介：<input th:value="${requirementById.getIntroduction()}"type="text" name="introduction">
+    </div>
+    <div>
+        细节：<input th:value="${requirementById.getDetails()}" type="text" name="details">
+    </div>
+    <div>
+        预算(RMB)：<input th:value="${requirementById.getBudget()}" type="number" name="budget">
+    </div>
+    <div>
+        开始时间：<input th:value="${#dates.format(requirementById.getStarttime(),'yyyy-MM-dd HH:mm:ss')}" type="text" name="starttime" width="300px">
+    </div>
+    <div>
+        结束时间：<input th:value="${#dates.format(requirementById.getEndtime(),'yyyy-MM-dd HH:mm:ss')}"type="text" name="endtime">
+    </div>
+    <button type="submit">修改</button>
+</form>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ida.dao.CompanyDao">
+
+    <!-- 查找所有需求-->
+    <select id="selectAllReq" resultType="com.ida.entity.Requirement">
+        select * from requirement where com_id = #{identityCompany}
+    </select>
+
+    <!-- 添加需求-->
+    <insert id="addRequirement" parameterType="Requirement">
+        insert into requirement(title,introduction,details,budget,starttime,endtime,companyemail,com_id,filePath) values(#{title},#{introduction},#{details},#{budget},#{starttime},#{endtime},#{companyemail},#{companyid},#{filePath})
+    </insert>
+
+    <!--根据ID查找需求-->
+    <select id="selectReqById" resultType="com.ida.entity.Requirement">
+        select * from requirement where id = #{id}
+    </select>
+
+   <!-- 修改需求-->
+    <update id="updateRequirement" parameterType="Requirement">
+        update requirement set title=#{title}, introduction=#{introduction}, details=#{details}, budget=#{budget}, starttime=#{starttime}, endtime=#{endtime} where id=#{id}
+    </update>
+
+    <!-- 删除需求-->
+    <delete id="deleteRequirement" parameterType="Requirement">
+        delete  from requirement where id=#{id}
+    </delete>
+
+    <!-- 查看报名情况-->
+    <select id="selectEnroll" resultType="Enroll">
+        SELECT
+          requirement.title,requirement.id,enroll.*
+        FROM
+           requirement,enroll
+        WHERE enroll.req_id=requirement.id
+        AND requirement.com_id = #{id}
+    </select>
+
+    <!-- 通过报名-->
+    <update id="agreeEnroll" parameterType="int" >
+        update enroll set state='通过' where urid=#{urid}
+    </update>
+
+    <!-- 不通过报名-->
+    <update id="refuseEnroll" parameterType="int" >
+        update enroll set state='不通过' where urid=#{urid}
+    </update>
+
+
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

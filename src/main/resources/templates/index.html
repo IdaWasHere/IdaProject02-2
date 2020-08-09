@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+<head>
+    <meta charset="UTF-8">
+    <title>首页</title>
+</head>
+<body>
+
+<a href="/register.html">注册</a>
+
+<!-- 主容器-->
+<div class="container">
+
+   <!-- 未登录-->
+    <div sec:authorize="!isAuthenticated()">
+        <a href="/login.html">登录</a>
+    </div>
+
+      <!--已登录-->
+    <div sec:authorize="isAuthenticated()">
+        <a>
+            用户名：<span sec:authentication="name"></span>
+          <!--  <a th:href="@{/toLogout}">退出登录</a>-->
+            <a th:href="@{/logout}">注销</a>
+
+            <!-- 上传/更换头像-->
+            <p>头像</p>
+            <img th:src="@{'/img/'+${username}+'.jpg'}"/>
+            <form th:action="@{/user/pic}" method="post" enctype="multipart/form-data">
+                <label>更换头像</label>
+                <input type="file" name="file"/>
+                <input type="submit" value="上传">
+            </form>
+
+        </a>
+    </div>
+
+
+    <div class="ui segment" style="text-align: center">
+        <h3>成果交易平台</h3>
+    </div>
+
+    <div>
+        <br>
+              <div class="content" sec:authorize="hasAnyRole('USER','COMPANY')">
+                  <h5 class="content">普通用户</h5>
+                  <hr>
+                  <div><a th:href="@{/level1/updatePassword}">修改密码</a></div>
+                  <div><a th:href="@{/level1/userRequirementList}">查看需求表，进行报名</a></div>
+                  <div><a th:href="@{/level1/myEnrollList}">查看自己的报名情况</a></div>
+                  <div><a th:href="@{/level1/companyList}">查看企业列表，进行企业认证，成为企业用户</a></div>
+              </div>
+
+              <div class="content" sec:authorize="hasRole('COMPANY')">
+                  <h5 class="content">企业用户</h5>
+                  <hr>
+                  <div><a th:href="@{/level2/selectAllReq}">查找所有需求</a></div>
+                  <div><a th:href="@{/level2/selectEnroll}">查看报名列表并审核</a></div>
+                  <div><a th:href="@{/level2/3}"><i class="bullhorn icon"></i> Level-2-3</a></div>
+              </div>
+
+               <div class="content" sec:authorize="hasRole('ADMIN')">
+                     <h5 class="content">管理员</h5>
+                     <hr>
+                   <div><a th:href="@{/level3/identityList}">审核用户认证</a></div>
+                   <div><a th:href="@{/level3/requirementReadList}">需求审核列表</a></div>
+                   <div><a th:href="@{/level3/selectEnrollList}">查看报名情况</a></div>
+                   <div><a th:href="@{/level3/userList}">查看用户列表，进行拉黑</a></div>
+               </div>
+        </div>
+</div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

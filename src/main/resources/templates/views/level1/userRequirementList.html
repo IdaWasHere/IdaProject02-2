@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>需求列表</title>
+</head>
+<body>
+
+<form th:action="@{/user/toList1}" method="get">
+
+</form>
+
+<table>
+    <thead>
+    <tr>
+        <th>编号</th>
+        <th>企业</th>
+        <th>负责人</th>
+        <th>联系电话</th>
+        <th>活动标题</th>
+        <th>活动简介</th>
+        <th>活动细节</th>
+        <th>预算</th>
+        <th>开始时间</th>
+        <th>结束时间</th>
+        <th>报名</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    <tr th:each="requirement1:${pb.list}">
+        <td th:text="${requirement1.getId()}"></td>
+        <td th:text="${requirement1.getCompanyname()}"></td>
+        <td th:text="${requirement1.getLeader()}"></td>
+        <td th:text="${requirement1.getPhone()}"></td>
+        <td th:text="${requirement1.getTitle()}"></td>
+        <td th:text="${requirement1.getIntroduction()}"></td>
+        <td th:text="${requirement1.getDetails()}"></td>
+        <td th:text="${requirement1.getBudget()}"></td>
+        <td th:text="${#dates.format(requirement1.getStarttime(),'yyyy-MM-dd')}"></td>
+        <td th:text="${#dates.format(requirement1.getEndtime(),'yyyy-MM-dd')}"></td>
+        <td>
+            <a th:href="@{/user/enroll1/}+${requirement1.getId()}">报名</a>
+        </td>
+    </tr>
+    </tbody>
+</table>
+
+<p>
+    共<span th:text="${pb.totalCount}"></span>条记录
+    共<span th:text="${pb.totalPage}"></span>页
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+    <form th:action="@{/user/toList1}" method="get">
+    <div>
+        跳转到第<input type="number" name="currentPage" style="width: 30px" >页
+        <input type="text" name="fuzzy" placeholder="支持模糊查询">
+    </div>
+    <input type="submit" value="确定"/>
+    </form>
+
+</p>
+
+</body>
+</html>

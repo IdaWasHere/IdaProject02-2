@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>填写报名信息</title>
+</head>
+<body>
+<form th:action="@{/user/enroll2}" method="post">
+    <div>
+        <input type="hidden" th:value="${reqid}" name="reqid">
+        真实姓名：<input type="text" name="realname"><br>
+        联系电话：<input type="number" name="phone"><br>
+        年&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;龄：<input type="number" name="age"><br>
+        家庭地址：<input type="text" name="address">
+    </div>
+    <div>
+        <input type="submit" value="报名">
+    </div>
+</form>
+</body>
+</html>

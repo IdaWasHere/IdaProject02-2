@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>添加需求</title>
+</head>
+<body>
+<form th:action="@{/addRequirement}" method="post" enctype="multipart/form-data">
+<div>
+    标题：<input type="text" name="title">
+</div>
+<div>
+    简介：<input type="text" name="introduction">
+</div>
+<div>
+    细节：<input type="text" name="details">
+</div>
+<div>
+    预算(RMB)：<input type="number" name="budget">
+</div>
+<div>
+    开始时间：<input type="text" name="starttime">
+</div>
+<div>
+    结束时间：<input type="text" name="endtime">
+</div>
+ <div>
+    企业邮箱：<input type="text" name="companyemail">
+</div>
+<div>
+    附件：<input type="file" name="file"/>
+</div>
+<button type="submit">添加</button>
+</form>
+</body>
+</html>

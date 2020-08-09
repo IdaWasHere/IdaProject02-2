@@ -1,0 +1,52 @@
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ida.dao.AdminDao">
+    <select id="identity" resultType="Identity">
+         SELECT
+         company.comid,company.companyname,identity.*,user.id,user.username,user.email
+         FROM
+         company,identity,USER
+         WHERE
+         identity.uid=user.id
+         AND
+         identity.cid=company.comid;
+    </select>
+
+    <!-- 管理员通过用户认证-->
+    <update id="agreeIdentity" parameterType="int">
+            UPDATE USER SET roles='ROLE_COMPANY',identityCompany=#{cid} WHERE id=#{uid}
+    </update>
+
+   <!-- 管理员查看 企业用户提交的需求 列表-->
+    <select id="requirementReadList" resultType="Requirement">
+        select * from requirement
+    </select>
+
+    <!--管理员审核 需求 通过-->
+    <update id="readReq" parameterType="Integer">
+        update requirement set if_read=1 where id=#{id}
+    </update>
+
+    <!--管理员审核 需求 不通过-->
+    <update id="readReq2" parameterType="Integer">
+        update requirement set if_read=2 where id=#{id}
+    </update>
+
+    <!-- 查看报名表-->
+    <select id="selectEnrollList" resultType="Enroll">
+        SELECT
+          requirement.title,requirement.id,enroll.*
+        FROM
+           requirement,enroll
+        WHERE enroll.req_id=requirement.id
+    </select>
+
+    <!--查询用户列表-->
+    <select id="toSelectUserList" resultType="User">
+        select *from user where roles  not like 'ROLE_ADMIN'
+    </select>
+
+    <!--列入黑名单-->
+    <update id="black" parameterType="int">
+        update user set roles='ROLE_BLACK' where id=#{id}
+    </update>
+</mapper>

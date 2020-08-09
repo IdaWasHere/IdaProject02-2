@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>需求审核列表</title>
+</head>
+<body>
+<table>
+    <thead>
+    <tr>
+        <th><input type="checkbox" name="" value=""></th>
+        <th>ID</th>
+        <th>标题</th>
+        <th>简介</th>
+        <th>细节</th>
+        <th>预算</th>
+        <th>开始时间</th>
+        <th>结束时间</th>
+        <th>企业邮箱</th>
+        <th>附件</th>
+        <th>审核状态</th>
+        <th>操作</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="requirementRead:${requirementReads}">
+        <td><input type="checkbox" name="" value=""></td>
+        <td th:text="${requirementRead.getId()}"></td>
+        <td th:text="${requirementRead.getTitle()}"></td>
+        <td th:text="${requirementRead.getIntroduction()}"></td>
+        <td th:text="${requirementRead.getDetails()}"></td>
+        <td th:text="${requirementRead.getBudget()}"></td>
+        <td th:text="${#dates.format(requirementRead.getStarttime(),'yyyy-MM-dd')}"></td>
+        <td th:text="${#dates.format(requirementRead.getEndtime(),'yyyy-MM-dd')}"></td>
+        <td th:text="${requirementRead.getCompanyemail()}"></td>
+        <td>
+            <a th:href="@{'/download?filePath='+${requirementRead.filePath}}">下载</a>
+         </td>
+        <td th:text="${requirementRead.getIf_read()==0?'审核中':'已审核'}"></td>
+        <td>
+            <a th:href="@{/agreeReq(id=${requirementRead.getId()},companyemail=${requirementRead.getCompanyemail()})}">审核通过</a>
+            <a th:href="@{/refuseReq(id=${requirementRead.getId()},companyemail=${requirementRead.getCompanyemail()})}">审核未通过</a>
+        </td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>

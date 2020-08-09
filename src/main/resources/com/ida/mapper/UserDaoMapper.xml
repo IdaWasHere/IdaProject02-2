@@ -1,0 +1,94 @@
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ida.dao.UserDao">
+    <!-- 注册-->
+    <insert id="save" parameterType="User">
+        insert into user(id,username,password,email,age,sex) values(default,#{username},#{password},#{email},#{age},#{sex})
+    </insert>
+
+    <!-- 用户名已被注册：查找用户名-->
+    <select id="findByUsername" resultType="User">
+       select * from user where username = #{username};
+   </select>
+
+    <!--根据用户名查找对应的密码-->
+    <select id="findPassword" resultType="String">
+       select password from user where username = #{username};
+    </select>
+
+    <!-- 修改旧密码为加密的新密码-->
+    <update id="updateCryptoPassword" parameterType="User">
+        update user set password=#{crypto_password} where username =#{user_name}
+    </update>
+
+
+    <!--分页查询总记录数-->
+    <select id="findTotalCount" resultType="int">
+        select count(*) from requirement where requirement.if_read=1
+    </select>
+
+   <!-- 分页查询list集合-->
+    <select id="findByPage" parameterType="int" resultType="Requirement">
+        select
+        company.*, requirement.*
+        from
+        company,requirement
+        where company.comid=requirement.com_id
+          and requirement.if_read=1
+         limit #{start},#{rows}
+    </select>
+
+    <!--模糊查询总记录数-->
+    <select id="findTotalCountByFuzzy" parameterType="String" resultType="int">
+        select count(*) from requirement
+        where title   like concat('%',#{fuzzy},'%')
+        and requirement.if_read=1
+    </select>
+
+    <!--模糊查询需求-->
+    <select id="findByFuzzy"  resultType="Requirement">
+        select
+        company.*, requirement.*
+        from
+        company,requirement
+        where company.comid=requirement.com_id
+        and requirement.if_read=1
+        and  title like concat('%',#{fuzzy},'%')
+         limit #{start},#{rows}
+    </select>
+
+    <!-- 填写报名信息-->
+    <insert id="enroll2" parameterType="Enroll">
+        insert into enroll(u_id,req_id,realname,phone,age,address) values (#{uid},#{reqid},#{realname},#{phone},#{age},#{address})
+    </insert>
+
+
+    <!-- 查看自己的报名列表-->
+    <select id="myEnrollList" parameterType="int" resultType="Enroll">
+       SELECT
+       enroll.*,requirement.title
+       FROM
+       enroll,requirement
+       WHERE
+       enroll.req_id = requirement.id
+       AND
+       u_id=#{uid}
+    </select>
+
+    <!-- 企业认证 之 查看企业列表-->
+    <select id="companyList" resultType="Company">
+        select * from company where comid > 0;
+    </select>
+
+    <!-- 企业认证 之 提交认证请求-->
+    <update id="identity" parameterType="int">
+        insert into identity(u_id,c_id) values (#{uid},#{cid})
+    </update>
+
+
+   <!-- 根据用户名给对应用户更改头像-->
+    <update id="updateImg" parameterType="String">
+        update user set
+        pic=#{pic}
+        where username=#{username}
+    </update>
+</mapper>

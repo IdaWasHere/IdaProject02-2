@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>注册</title>
+</head>
+<body style="height: 300px;">
+     <form th:action="@{/user/register}" method="post" style="text-align: center;">
+
+         <h3 style="text-align: center">用户注册</h3>
+         <!--判断用户名是否已被注册-->
+         <p style="color: red" th:text="${registermsg}" th:if="${not #strings.isEmpty(registermsg)}"></p>
+
+         <div style="margin-bottom: 5px;">
+            <label for="username">用&nbsp;户&nbsp;名:
+                <input type="text" id="username" name="username" required="true" placeholder="请输入用户名"  autocomplete="off" style="width: 280px;"/></label>
+            <p class="message"><i class="active">2-12个字符,推荐使用中文名</i> </p>
+         </div>
+
+         <div style="margin-bottom: 5px;">
+             <label>密&nbsp;&nbsp;&nbsp;码  :
+             <input type="password" name="password" required="true" placeholder="请输入密码" autocomplete="off" style="width: 280px;"/> </label>
+         </div>
+
+         <div style="margin-bottom: 5px;">
+             <label>邮&nbsp;&nbsp;&nbsp;箱  :  </label>
+             <input type="text" name="email" required="true" placeholder="请输入邮箱(用于找回密码)" autocomplete="off" style="width: 280px;"/>
+         </div>
+
+         <div style="margin-bottom: 5px;">
+             <label>年&nbsp;&nbsp;龄: </label>
+             <input type="number" name="age" required="true" placeholder="请输入年龄" autocomplete="off" style="width: 280px;"/>
+         </div>
+
+        <!-- <div style="margin-bottom: 5px;">
+             <label>出&nbsp;生&nbsp;日&nbsp;期:</label>
+             <input type="date" name="birth" required="true"  autocomplete="off" style="width: 280px;"/>
+         </div>
+-->
+         <div style="margin-bottom: 5px;">
+             <label>性&nbsp;&nbsp;&nbsp;别  :</label>
+             <input type="radio" name="sex" value="0" title="男" checked/>男
+             <input type="radio" name="sex" value="1" title="女"/>女
+         </div>
+
+         <div style="margin-top: 15px;text-align: center;">
+             <button lay-submit="" style="width: 100px;">注册</button>
+         </div>
+
+
+         <script>
+            var userName=document.getElementById("userName");
+            var myp=document.getElementsByTagName("p");
+            var userName_p=myp[0];
+            userName.onfocus=function () {
+                userName_p.style.display="block";
+                //光标再次聚集
+                userName_p.innerHTML='2-12个字符,推荐使用中文名';
+            }
+            userName.onblur=function () {
+                //正则表达式
+                var reg=/^[\w\u4e00-\u9fa5]{2,12}$/;
+                //如果值为空，改变p标签的内容：不能为空
+                if(userName.value==""){
+                    userName_p.innerHTML='不能为空';
+                    return false;
+                }else if(!reg.test(userName.value)){
+                    //如果长度不在2-12之间，并存在非法字符
+                    userName_p.innerHTML='长度不在范围内，并存在非法字符';
+                    return false;
+                }else {
+                    //输入与要求一致
+                    userName_p.innerHTML='正确';
+                    return true;
+                }
+
+            }
+         </script>
+
+     </form>
+</body>
+</html>

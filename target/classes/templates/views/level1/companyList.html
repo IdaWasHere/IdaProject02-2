@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>企业列表</title>
+</head>
+<body>
+<table>
+    <thead>
+    <th>企业编号</th>
+    <th>企业名称</th>
+    <th>企业负责人</th>
+    <th>联系电话</th>
+    <th>操作</th>
+    </thead>
+    <tbody>
+    <tr th:each="company:${companys}">
+        <td th:text="${company.getComid()}"></td>
+        <td th:text="${company.getCompanyname()}"></td>
+        <td th:text="${company.getLeader()}"></td>
+        <td th:text="${company.getPhone()}"></td>
+        <td>
+            <a th:href="@{/user/identity/}+${company.getComid()}">认证</a>
+        </td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>报名列表</title>
+</head>
+<body>
+<h3>审核报名列表</h3>
+<table>
+    <thead>
+    <tr>
+        <th><input type="checkbox" name="" value=""></th>
+        <th>活动标题</th>
+        <th>报名用户</th>
+        <th>联系电话</th>
+        <th>年龄</th>
+        <th>地址</th>
+        <th>审核状态</th>
+        <th>操作</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="enroll:${enrolls}">
+        <td><input type="checkbox" name="" value=""></td>
+        <td th:text="${enroll.getTitle()}"></td>
+        <td th:text="${enroll.getRealname()}"></td>
+        <td th:text="${enroll.getPhone()}"></td>
+        <td th:text="${enroll.getAge()}"></td>
+        <td th:text="${enroll.getAddress()}"></td>
+        <td th:text="${enroll.getState()}"></td>
+        <td>
+            <a th:href="@{/refuseEnroll/}+${enroll.getUrid()}">通过</a>
+            <a th:href="@{/agreeEnroll/}+${enroll.getUrid()}">不通过</a>
+        </td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>
