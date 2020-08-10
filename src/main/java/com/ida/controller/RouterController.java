@@ -67,6 +67,6 @@ public class RouterController {
 
     @RequestMapping("/updatePassword")
     public String viewsUpdatePassword(){
-        return "views/updatePassword";
+        return "updatePassword";
     }
 }
