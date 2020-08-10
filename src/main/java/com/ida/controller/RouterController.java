@@ -15,7 +15,6 @@ public class RouterController {
         return "index";
     }
 
-
     @RequestMapping("/level1/updatePassword")
     public String updatePassword(){
         return "views/level1/updatePassword";
@@ -64,5 +63,10 @@ public class RouterController {
     @RequestMapping("/level3/userList")
     public String userList(){
         return "redirect:/toSelectUserList";
+    }
+
+    @RequestMapping("/updatePassword")
+    public String viewsUpdatePassword(){
+        return "views/updatePassword";
     }
 }

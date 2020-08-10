@@ -5,6 +5,7 @@ import com.ida.entity.PageBean;
 import com.ida.entity.User;
 import com.ida.service.UserService;
 import com.ida.util.MD5Utils;
+import com.ida.util.RandomValidateCodeUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -16,7 +17,6 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import org.thymeleaf.util.StringUtils;
 
-import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -33,6 +33,8 @@ public class UserController {
     @Autowired
     private AuthenticationManager myAuthenticationManager;
 
+    RandomValidateCodeUtil randomValidateCodeUtil = new RandomValidateCodeUtil();
+
     //进行注册   与register.html的action对应
     @PostMapping("/register")
     public String register(User user, @RequestParam("username") String username, Model model,HttpSession session) {
@@ -43,7 +45,7 @@ public class UserController {
             user.setPassword(MD5Utils.encode(user.getPassword()));
             userService.register(user);
             //跳转到登录页面
-            return "login";
+            return "redirect:/user/toLogin";
         } else {
             model.addAttribute("registermsg", "该用户名已被注册！");
             return "register";
@@ -51,6 +53,22 @@ public class UserController {
 
     }
 
+    @GetMapping("toBack")
+    public String toBack(Model model,HttpServletRequest request){
+        String username = (String) request.getSession().getAttribute("username");
+        model.addAttribute("username",username);
+        return "index";
+    }
+
+    @GetMapping("/toLogin")
+    public String toLogin(Model model, HttpServletRequest request,HttpServletResponse response){
+        Object[] objects =  randomValidateCodeUtil.getRandcode(request,response);
+        model.addAttribute("randomCode", objects[0]);
+
+        System.out.println("getverity时调用util的objects[0],顺便存到model中的验证码"+(String) request.getSession().getAttribute("randomCode"));
+        request.getSession().setAttribute("random_img",objects[1]);
+        return "login";
+    }
 
     @PostMapping("/login")
     public String login(
@@ -72,27 +90,12 @@ public class UserController {
         //便于在index页面得到locPath
         model.addAttribute("user",findUser);
 
-        /*//账号或者密码验证部分
-        if (StringUtils.isEmpty(username) || StringUtils.isEmpty(password)){
-            model.addAttribute("msg","请输入用户名或者密码");
-            return "login";
-        }
-        if (null == findUser) {
-            model.addAttribute("msg", "该账号不存在，请检查后重试");
-            return "login";
-        }
-        //验证密码是否正确
-        String newPassword = MD5Utils.encode(password);
-        if (!newPassword.equals(findUser.getPassword())){
-            model.addAttribute("msg","用户名/密码错误");
-            return "login";
-        }*/
-
-        //验证码部分
         String code = request.getParameter("code");
-        //获取session中的验证码
-        String random_code = (String) request.getSession().getAttribute("randomCode");
-      if (StringUtils.isEmpty(code) || !random_code.equals(code)){
+        //获取model中的验证码
+       String randomCode = request.getParameter("randomCode");
+        System.out.println("login_model******"+randomCode);
+
+      if (StringUtils.isEmpty(code) || !randomCode.equals(code)){
           model.addAttribute("msg", "验证码错误！");
           return "login";
       }
@@ -107,7 +110,17 @@ public class UserController {
         session.setAttribute("SPRING_SECURITY_CONTEXT",SecurityContextHolder.getContext());
         //修改头像需要用到username
         session.setAttribute("username",username);
-        model.addAttribute("username",username);
+    //    model.addAttribute("username",username);
+
+        //默认头像
+        String filename="C:\\Users\\86136\\02trading\\src\\main\\resources\\static\\img\\"+ username +".jpg";
+        String pic = userService.findPicByUsername(username);
+        if (!pic.equals(filename)){
+            model.addAttribute("username",null);
+        }else {
+            model.addAttribute("username",username);
+        }
+
 
      /*  //记住密码
         String remember = request.getParameter("remember");
@@ -163,7 +176,7 @@ public class UserController {
         String verity_code = (String) request.getSession().getAttribute("mailCode");
         if(!StringUtils.isEmpty(veritycode) && veritycode.equals(verity_code)){
             //验证成功 ， 跳转到首页
-            return "index";
+            return "redirect:/updatePassword";
         }else{
             model.addAttribute("verityfail","验证码错误");
             return "findPassword";
@@ -184,7 +197,7 @@ public class UserController {
             //接受新密码，加密更改存入数据库
             String md5_passworrd = MD5Utils.encode(newpassword);
             userService.updateCryptoPassword(username,md5_passworrd);
-            return "index";
+            return "redirect:/user/toBack";
 
         }else {
             model.addAttribute("oldpwdwrong","旧密码 错误");
@@ -227,8 +240,6 @@ public class UserController {
 
     /**
      * 报名
-     * @param request
-     * @return
      */
     @PostMapping("/enroll2")
     public String enroll2(HttpServletRequest request){
@@ -285,43 +296,20 @@ public class UserController {
 
                 BufferedOutputStream out = new BufferedOutputStream(
                         //保存图片到目录下
-                        new FileOutputStream(new File("C:\\Users\\86136\\02trading\\src\\main\\resources\\static\\img\\"+username+".jpg")));
+                        new FileOutputStream(new File("C:\\Users\\86136\\02trading\\src\\main\\resources\\static\\img\\"+ username +".jpg")));
                 out.write(file.getBytes());
                 out.flush();
                 out.close();
-                String filename="C:\\Users\\86136\\02trading\\src\\main\\resources\\static\\img\\"+username+".jpg";
+                String filename="C:\\Users\\86136\\02trading\\src\\main\\resources\\static\\img\\"+ username +".jpg";
                 userService.updateImg(username,filename);
 
             model.addAttribute("filename",filename);
             model.addAttribute("username",username);
+            System.out.println(filename);
+            System.out.println(username);
             return "index";
         }else {
             return "上传失败，空文件";
         }
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -28,10 +28,14 @@
 
         <!--验证码-->
         <div class="form-group">
-         验 证 码 :<input class="form-control" type="text" name="code" placeholder="请输入验证码" maxlength="4"><br>
+         验 证 码 :<input type="text" name="code" placeholder="请输入验证码" maxlength="4"><br>
          <img id="checkcode"  th:src="@{/getVerity}" height="36" width="100px">
              <a  id="change" href="" >看不清，换一张</a>
         </div>
+
+    <input  type="hidden" name="randomCode" th:value="${randomCode}">
+
+
         <div style="text-align: center">
             <input type="checkbox" name="remember" >记住密码，七天免登
         </div>
@@ -40,6 +44,7 @@
         </div>
     <a href="/findPassword.html">忘记密码</a>
 </form>
+
 </body>
 
 </html>

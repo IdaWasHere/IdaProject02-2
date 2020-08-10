@@ -1,11 +1,15 @@
 package com.ida.util;
 
+import org.springframework.stereotype.Component;
+
+import javax.annotation.PostConstruct;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.util.Random;
 
+@Component
 public class RandomValidateCodeUtil {
     //private String 随机产生只有数字的字符串
     //randString 随机产生只有字母的字符串

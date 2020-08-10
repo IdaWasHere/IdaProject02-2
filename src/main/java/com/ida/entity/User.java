@@ -30,6 +30,9 @@ public class User implements Serializable {
 
     //上传头像
     private String pic;
+    //取出验证码，去login.html回显
+    private String randomCode;
+
 
     public Integer getId() {
         return id;
@@ -117,5 +120,13 @@ public class User implements Serializable {
 
     public void setPic(String pic) {
         this.pic = pic;
+    }
+
+    public String getRandomCode() {
+        return randomCode;
+    }
+
+    public void setRandomCode(String randomCode) {
+        this.randomCode = randomCode;
     }
 }

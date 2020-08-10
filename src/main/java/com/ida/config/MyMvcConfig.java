@@ -11,6 +11,7 @@ public class MyMvcConfig implements WebMvcConfigurer {
         registry.addViewController("/register.html").setViewName("register");
         registry.addViewController("/login.html").setViewName("login");
         registry.addViewController("/findPassword.html").setViewName("findPassword");
+        registry.addViewController("/updatePassword.html").setViewName("updatePassword");
     }
 
     /**
@@ -19,8 +20,7 @@ public class MyMvcConfig implements WebMvcConfigurer {
         @Override
         public void addResourceHandlers(ResourceHandlerRegistry registry) {
             //在磁盘apple目录下的所有资源会被解析成以下路径
-            registry.addResourceHandler("/src/main/resources/static/img/**").addResourceLocations("classpath:/img/");
-            WebMvcConfigurer.super.addResourceHandlers(registry);
+             registry.addResourceHandler("/img/**").addResourceLocations("file:/C:/Users/86136/02trading/src/main/resources/static/img/");
         }
 
 /*    @Autowired

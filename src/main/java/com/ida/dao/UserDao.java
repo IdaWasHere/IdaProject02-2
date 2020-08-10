@@ -88,6 +88,8 @@ public interface UserDao {
      */
     void updateImg(String username, String pic);
 
+    //根据用户名查找该用户的头像，如果为null.jpg,则在controller层比较，确认为默认头像
+    String findPicByUsername(String username);
 }
 
 

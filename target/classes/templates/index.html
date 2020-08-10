@@ -14,7 +14,7 @@
 
    <!-- 未登录-->
     <div sec:authorize="!isAuthenticated()">
-        <a href="/login.html">登录</a>
+        <a th:href="@{/user/toLogin}">登录</a>
     </div>
 
       <!--已登录-->
@@ -25,13 +25,14 @@
             <a th:href="@{/logout}">注销</a>
 
             <!-- 上传/更换头像-->
-            <p>头像</p>
-            <img th:src="@{'/img/'+${username}+'.jpg'}"/>
             <form th:action="@{/user/pic}" method="post" enctype="multipart/form-data">
                 <label>更换头像</label>
                 <input type="file" name="file"/>
                 <input type="submit" value="上传">
             </form>
+          <!--  <input  type="text" name="username" th:value="${username}">-->
+            <p>头像</p>
+            <img th:src="@{'/img/'+${username}+'.jpg'}"/>
 
         </a>
     </div>
@@ -57,7 +58,6 @@
                   <hr>
                   <div><a th:href="@{/level2/selectAllReq}">查找所有需求</a></div>
                   <div><a th:href="@{/level2/selectEnroll}">查看报名列表并审核</a></div>
-                  <div><a th:href="@{/level2/3}"><i class="bullhorn icon"></i> Level-2-3</a></div>
               </div>
 
                <div class="content" sec:authorize="hasRole('ADMIN')">

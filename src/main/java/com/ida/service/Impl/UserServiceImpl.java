@@ -127,6 +127,11 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+    public String findPicByUsername(String username) {
+        return userDao.findPicByUsername(username);
+    }
+
+    @Override
     public PageBean findListByPage(String currentPage, int rows) {
 
 

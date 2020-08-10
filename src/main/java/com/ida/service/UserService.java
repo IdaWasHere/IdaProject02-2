@@ -81,6 +81,9 @@ public interface UserService extends UserDetailsService {
      */
     void upload(String username, byte[] file, String filePath, String fileName) throws IOException;
 
+    //根据用户名查找该用户的头像，如果为null.jpg,则在controller层比较，确认为默认头像
+    String findPicByUsername(String username);
+
 }
 
 

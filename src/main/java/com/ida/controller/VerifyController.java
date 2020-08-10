@@ -3,8 +3,10 @@ package com.ida.controller;
 import com.ida.service.UserService;
 import com.ida.util.FindPwdUtil;
 import com.ida.util.RandomValidateCodeUtil;
+import com.sun.org.apache.xpath.internal.operations.Mod;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -20,20 +22,18 @@ import java.io.OutputStream;
 @ResponseBody
 public class VerifyController {
 
-    /**
-     * 生成验证码，将验证码图片传给前台界面
-     */
+    @Autowired
+    RandomValidateCodeUtil randomValidateCodeUtil;
+
+    /*生成验证码，将验证码图片传给前台界面*/
     @RequestMapping(value = "/getVerity",method = RequestMethod.GET)
-    public void getVerity(HttpServletRequest request, HttpServletResponse response) throws IOException {
+    public String getVerity(HttpServletRequest request, HttpServletResponse response, Model model) throws IOException {
 
-        RandomValidateCodeUtil randomValidateCodeUtil = new RandomValidateCodeUtil();
-        Object[] objects =  randomValidateCodeUtil.getRandcode(request,response);
-
-        //1、验证码 字符串 给 usercontroller去校对
-        request.getSession().setAttribute("randomCode",objects[0]);
+        //1、验证码 图片
+        Object random_img = request.getSession().getAttribute("random_img");
 
         //2、将图片输出给浏览器的html
-        BufferedImage image = (BufferedImage) objects[1];
+        BufferedImage image = (BufferedImage) random_img;
         //设置相应类型，告诉浏览器输出的内容为图片
         response.setContentType("image/png");
         //设置响应头消息，告诉浏览器不要缓存此内容
@@ -44,6 +44,7 @@ public class VerifyController {
 
         OutputStream outputStream = response.getOutputStream();
         ImageIO.write(image,"png",outputStream);
+        return "login";
         }
 
     /**

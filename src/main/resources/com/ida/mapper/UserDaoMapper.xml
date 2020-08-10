@@ -81,7 +81,7 @@
 
     <!-- 企业认证 之 提交认证请求-->
     <update id="identity" parameterType="int">
-        insert into identity(u_id,c_id) values (#{uid},#{cid})
+        insert into identity(uid,cid) values (#{uid},#{cid})
     </update>
 
 
@@ -91,4 +91,9 @@
         pic=#{pic}
         where username=#{username}
     </update>
+    
+   <!-- 默认头像-->
+    <select id="findPicByUsername" parameterType="String" resultType="String">
+        select pic from user where username = #{username}
+    </select>
 </mapper>
