@@ -44,7 +44,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         //1、指定登录inout标签名称;
         http.formLogin().usernameParameter("username").passwordParameter("password")
           //2、制定定制的登录请求  (如果是另一方法，则（"userLogin
-                 .loginPage("/login.html").failureUrl("/");
+                 .loginPage("/user/toLogin").failureUrl("/");
         //防止网站攻击
         http.csrf().disable();
         //注销, 跳到首页

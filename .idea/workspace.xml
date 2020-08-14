@@ -1,70 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="95f93232-3788-4204-969f-0a8e7db32139" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+    <list default="true" id="95f93232-3788-4204-969f-0a8e7db32139" name="Default Changelist" comment="修改了较大块的bug.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/02trading.iml" beforeDir="false" afterPath="$PROJECT_DIR$/02trading.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ida/config/LoginInterceptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ida/config/LoginInterceptor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/ida/config/MyMvcConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ida/config/MyMvcConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/ida/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ida/config/SecurityConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/ida/controller/RouterController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ida/controller/RouterController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/ida/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ida/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ida/controller/VerifyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ida/controller/VerifyController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ida/dao/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ida/dao/UserDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ida/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ida/entity/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ida/service/Impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ida/service/Impl/UserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ida/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ida/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ida/util/RandomValidateCodeUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ida/util/RandomValidateCodeUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/ida/mapper/UserDaoMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/ida/mapper/UserDaoMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/img/1.JPG" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/img/Cl.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/img/admin.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/img/company2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/img/user.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/findPassword.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/findPassword.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/img/null.JPG" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/img/null.JPG" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/views/level1/companyList.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/views/level1/companyList.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/views/level1/enroll.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/views/level1/enroll.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/views/level1/myEnrollList.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/views/level1/myEnrollList.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/views/level1/updatePassword.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/views/level1/updatePassword.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/views/level1/userRequirementList.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/views/level1/userRequirementList.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/views/level2/addRequirement.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/views/level2/addRequirement.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/views/level2/enrollList.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/views/level2/enrollList.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/views/level2/requirementList.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/views/level2/requirementList.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/views/level2/updateRequirement.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/views/level2/updateRequirement.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/views/level3/identityList.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/views/level3/identityList.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/views/level3/requirementReadList.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/views/level3/requirementReadList.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/views/level3/selectEnrollList.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/views/level3/selectEnrollList.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/views/level3/userList.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/views/level3/userList.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/ida/config/MyMvcConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ida/config/MyMvcConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/ida/config/SecurityConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ida/config/SecurityConfig.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/ida/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ida/controller/UserController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ida/controller/VerifyController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ida/controller/VerifyController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ida/entity/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ida/entity/User.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ida/mapper/UserDaoMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ida/mapper/UserDaoMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ida/util/RandomValidateCodeUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ida/util/RandomValidateCodeUtil.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/img/1.JPG" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/img/Cl.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/img/admin.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/img/company2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/img/company2.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/img/user.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/img/user.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/findPassword.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/findPassword.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/views/level1/companyList.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/views/level1/companyList.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/views/level1/enroll.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/views/level1/enroll.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/views/level1/myEnrollList.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/views/level1/myEnrollList.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/views/level1/updatePassword.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/views/level1/updatePassword.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/views/level1/userRequirementList.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/views/level1/userRequirementList.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/views/level2/addRequirement.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/views/level2/addRequirement.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/views/level2/enrollList.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/views/level2/enrollList.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/views/level2/requirementList.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/views/level2/requirementList.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/views/level2/updateRequirement.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/views/level2/updateRequirement.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/views/level3/identityList.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/views/level3/identityList.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/views/level3/requirementReadList.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/views/level3/requirementReadList.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/views/level3/selectEnrollList.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/views/level3/selectEnrollList.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/views/level3/userList.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/views/level3/userList.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -77,25 +27,19 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/ida/controller/RouterController.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/ida/config/MyMvcConfig.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="342">
-              <caret line="67" column="22" selection-start-line="67" selection-start-column="22" selection-end-line="67" selection-end-column="22" />
-              <folding>
-                <element signature="e#530#531#0" expanded="true" />
-                <element signature="e#582#583#0" expanded="true" />
-                <element signature="e#1856#1857#0" expanded="true" />
-                <element signature="e#1908#1909#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="181">
+              <caret line="36" column="61" lean-forward="true" selection-start-line="36" selection-start-column="61" selection-end-line="36" selection-end-column="61" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/ida/controller/UserController.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/ida/config/LoginInterceptor.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="309">
-              <caret line="178" column="30" selection-start-line="178" selection-start-column="30" selection-end-line="178" selection-end-column="30" />
+            <state relative-caret-position="-432">
+              <caret line="30" column="71" selection-start-line="30" selection-start-column="71" selection-end-line="30" selection-end-column="71" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -104,14 +48,24 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/templates/views/updatePassword.html">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/ida/controller/UserController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="38">
-              <caret line="2" column="6" lean-forward="true" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
+            <state relative-caret-position="2133">
+              <caret line="167" column="33" lean-forward="true" selection-start-line="167" selection-start-column="33" selection-end-line="167" selection-end-column="33" />
               <folding>
-                <element signature="n#style#0;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#p#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="imports" expanded="true" />
+                <element signature="e#11971#11972#0" expanded="true" />
+                <element signature="e#11995#11996#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/templates/login.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="119">
+              <caret line="20" column="44" selection-start-line="20" selection-start-column="44" selection-end-line="20" selection-end-column="44" />
             </state>
           </provider>
         </entry>
@@ -119,8 +73,43 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/templates/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="133">
-              <caret line="49" column="58" selection-start-line="49" selection-start-column="37" selection-end-line="49" selection-end-column="59" />
+            <state relative-caret-position="304">
+              <caret line="16" column="32" selection-start-line="16" selection-start-column="32" selection-end-line="16" selection-end-column="32" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/ida/controller/RouterController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="171">
+              <caret line="12" column="35" selection-start-line="12" selection-start-column="35" selection-end-line="12" selection-end-column="35" />
+              <folding>
+                <element signature="e#411#412#0" expanded="true" />
+                <element signature="e#441#442#0" expanded="true" />
+                <element signature="e#524#525#0" expanded="true" />
+                <element signature="e#576#577#0" expanded="true" />
+                <element signature="e#665#666#0" expanded="true" />
+                <element signature="e#712#713#0" expanded="true" />
+                <element signature="e#791#792#0" expanded="true" />
+                <element signature="e#840#841#0" expanded="true" />
+                <element signature="e#919#920#0" expanded="true" />
+                <element signature="e#968#969#0" expanded="true" />
+                <element signature="e#1045#1046#0" expanded="true" />
+                <element signature="e#1098#1099#0" expanded="true" />
+                <element signature="e#1177#1178#0" expanded="true" />
+                <element signature="e#1229#1230#0" expanded="true" />
+                <element signature="e#1308#1309#0" expanded="true" />
+                <element signature="e#1355#1356#0" expanded="true" />
+                <element signature="e#1448#1449#0" expanded="true" />
+                <element signature="e#1502#1503#0" expanded="true" />
+                <element signature="e#1589#1590#0" expanded="true" />
+                <element signature="e#1642#1643#0" expanded="true" />
+                <element signature="e#1713#1714#0" expanded="true" />
+                <element signature="e#1764#1765#0" expanded="true" />
+                <element signature="e#1845#1846#0" expanded="true" />
+                <element signature="e#1884#1885#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -164,12 +153,9 @@
         <option value="$PROJECT_DIR$/src/main/java/com/ida/controller/CompanyController.java" />
         <option value="$PROJECT_DIR$/src/main/resources/com/ida/mapper/CompanyDaoMapper.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/ida/controller/AdminController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/ida/config/LoginInterceptor.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/ida/util/RandomValidateCodeUtil.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/ida/entity/User.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/ida/controller/VerifyController.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/templates/login.html" />
-        <option value="$PROJECT_DIR$/src/main/java/com/ida/config/SecurityConfig.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/ida/config/ResourcrConfig.java" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/views/level1/updatePassword.html" />
@@ -185,16 +171,19 @@
         <option value="$PROJECT_DIR$/src/main/resources/templates/views/level3/requirementReadList.html" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/views/level3/selectEnrollList.html" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/views/level3/userList.html" />
-        <option value="$PROJECT_DIR$/src/main/resources/templates/index.html" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/findPassword.html" />
         <option value="$PROJECT_DIR$/src/main/java/com/ida/dao/UserDao.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/ida/service/UserService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/ida/service/Impl/UserServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/resources/com/ida/mapper/UserDaoMapper.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/ida/config/MyMvcConfig.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/ida/controller/RouterController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/ida/controller/UserController.java" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/views/updatePassword.html" />
+        <option value="$PROJECT_DIR$/src/main/java/com/ida/config/SecurityConfig.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/index.html" />
+        <option value="$PROJECT_DIR$/src/main/java/com/ida/controller/RouterController.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/login.html" />
+        <option value="$PROJECT_DIR$/src/main/java/com/ida/config/MyMvcConfig.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/ida/config/LoginInterceptor.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/ida/controller/UserController.java" />
       </list>
     </option>
   </component>
@@ -217,15 +206,17 @@
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-20" />
-    <option name="y" value="221" />
-    <option name="width" value="1940" />
-    <option name="height" value="884" />
+    <option name="y" value="412" />
+    <option name="width" value="1815" />
+    <option name="height" value="828" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -407,42 +398,10 @@
               <item name="templates" type="462c0819:PsiDirectoryNode" />
               <item name="views" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="02trading" type="b2602c69:ProjectViewProjectNode" />
-              <item name="02trading" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="level1" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="02trading" type="b2602c69:ProjectViewProjectNode" />
-              <item name="02trading" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="level2" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="02trading" type="b2602c69:ProjectViewProjectNode" />
-              <item name="02trading" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="level3" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -461,11 +420,11 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\86136\02trading\src\main\resources\templates" />
       <recent name="C:\Users\86136\02trading\src\main\resources\static\img" />
       <recent name="C:\Users\86136\02trading\src\main\resources\static\file" />
       <recent name="C:\Users\86136\02trading\src\main\resources\templates\views\level2" />
       <recent name="C:\Users\86136\02trading\src\main\resources\templates\company" />
-      <recent name="C:\Users\86136\02trading\src\main\resources\templates" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\86136\02trading\src\main\resources\templates\views" />
@@ -623,12 +582,31 @@
       <workItem from="1596975774702" duration="7880000" />
       <workItem from="1596987568890" duration="2277000" />
       <workItem from="1597024101467" duration="13115000" />
-      <workItem from="1597049020585" duration="6559000" />
+      <workItem from="1597049020585" duration="7872000" />
+      <workItem from="1597141279386" duration="8167000" />
+      <workItem from="1597187679438" duration="1892000" />
+      <workItem from="1597285823925" duration="3948000" />
+      <workItem from="1597386630845" duration="2962000" />
     </task>
+    <task id="LOCAL-00001" summary="修改了较大块的bug">
+      <created>1597070124333</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1597070124333</updated>
+    </task>
+    <task id="LOCAL-00002" summary="修改了较大块的bug.">
+      <created>1597071095827</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1597071095827</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="413331000" />
+    <option name="totallyTimeSpent" value="431613000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -640,9 +618,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="848" extended-state="7" />
+    <frame x="-7" y="-7" width="1550" height="848" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.23257373" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24597855" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Web" order="2" side_tool="true" />
       <window_info id="Designer" order="3" />
@@ -650,8 +629,8 @@
       <window_info id="Favorites" order="5" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32914925" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49798927" visible="true" weight="0.28910613" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.23044693" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49798927" visible="true" weight="0.22905028" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.42877096" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="Version Control" order="6" show_stripe_button="false" />
@@ -671,6 +650,36 @@
       <window_info anchor="right" id="Maven Projects" order="6" weight="0.3297587" />
       <window_info anchor="right" id="Bean Validation" order="7" />
     </layout>
+    <layout-to-restore>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.23592493" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Web" order="2" side_tool="true" />
+      <window_info id="Designer" order="3" />
+      <window_info id="UI Designer" order="4" />
+      <window_info id="Favorites" order="5" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32914925" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49798927" weight="0.28910613" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.23044693" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="Version Control" order="6" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Spring" order="8" />
+      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5020107" side_tool="true" weight="0.33798882" />
+      <window_info anchor="bottom" id="Messages" order="10" weight="0.5894886" />
+      <window_info anchor="bottom" id="TODO" order="11" weight="0.32914925" />
+      <window_info anchor="bottom" id="Terminal" order="12" weight="0.32914925" />
+      <window_info anchor="bottom" id="Java Enterprise" order="13" weight="0.32914925" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Database" order="4" />
+      <window_info anchor="right" id="Palette&#9;" order="5" />
+      <window_info anchor="right" id="Maven Projects" order="6" weight="0.3297587" />
+      <window_info anchor="right" id="Bean Validation" order="7" />
+    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -678,51 +687,16 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/ida/controller/VerifyController.java</url>
-          <line>62</line>
-          <properties />
-          <option name="timeStamp" value="12" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="修改了较大块的bug" />
+    <MESSAGE value="修改了较大块的bug." />
+    <option name="LAST_COMMIT_MESSAGE" value="修改了较大块的bug." />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/ida/util/UUIDUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/ida/util/MD5Utils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="19">
-          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/ida/util/MyPasswordEncoder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/ida/controller/CompanyController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="76">
           <caret line="121" column="22" selection-start-line="121" selection-start-column="8" selection-end-line="121" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/ida/config/LoginInterceptor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="5" column="27" selection-start-line="5" selection-start-column="27" selection-end-line="5" selection-end-column="27" />
         </state>
       </provider>
     </entry>
@@ -737,13 +711,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-551">
           <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-webmvc/5.0.13.RELEASE/spring-webmvc-5.0.13.RELEASE.jar!/org/springframework/web/servlet/mvc/method/annotation/RequestMappingHandlerAdapter.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="130">
-          <caret line="576" selection-start-line="576" selection-end-line="576" />
         </state>
       </provider>
     </entry>
@@ -762,13 +729,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/static/img/admin.jpg" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/ida/entity/User.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1368">
-          <caret line="119" lean-forward="true" selection-start-line="119" selection-end-line="119" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/apache/tomcat/embed/tomcat-embed-core/8.5.39/tomcat-embed-core-8.5.39.jar!/org/apache/tomcat/util/net/SocketProcessorBase.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="164">
@@ -791,13 +751,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/ida/config/ResourcrConfig.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/ida/config/SecurityConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
-          <caret line="30" selection-start-line="30" selection-end-line="30" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/templates/views/level1/enroll.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="361">
@@ -861,13 +814,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/5.0.13.RELEASE/spring-web-5.0.13.RELEASE.jar!/org/springframework/web/method/support/InvocableHandlerMethod.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="130">
-          <caret line="121" selection-start-line="121" selection-end-line="121" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/templates/views/level2/requirementList.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="133">
@@ -884,13 +830,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="133">
           <caret line="62" column="35" selection-start-line="62" selection-start-column="35" selection-end-line="62" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/ida/controller/VerifyController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1">
-          <caret line="36" column="23" selection-start-line="36" selection-start-column="23" selection-end-line="36" selection-end-column="23" />
         </state>
       </provider>
     </entry>
@@ -913,10 +852,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="388">
           <caret line="130" column="49" selection-start-line="130" selection-start-column="49" selection-end-line="130" selection-end-column="49" />
-          <folding>
-            <element signature="e#3953#3954#0" expanded="true" />
-            <element signature="e#3980#3981#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -941,12 +876,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/img/null.JPG">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/img/Cl.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/static/img/company2.jpg">
       <provider selected="true" editor-type-id="images" />
     </entry>
@@ -958,17 +887,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/static/img/林钰.jpg">
       <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/login.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="608">
-          <caret line="35" column="24" selection-start-line="35" selection-start-column="24" selection-end-line="35" selection-end-column="24" />
-          <folding>
-            <element signature="n#style#0;n#div#1;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#2;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/templates/views/level2/updateRequirement.html">
       <provider selected="true" editor-type-id="text-editor">
@@ -984,50 +902,147 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/index.html">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ida/entity/User.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="49" column="58" selection-start-line="49" selection-start-column="37" selection-end-line="49" selection-end-column="59" />
+        <state relative-caret-position="328">
+          <caret line="100" column="32" lean-forward="true" selection-start-line="100" selection-start-column="32" selection-end-line="100" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/updatePassword.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="38">
+          <caret line="2" column="6" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/5.0.13.RELEASE/spring-web-5.0.13.RELEASE.jar!/org/springframework/web/method/support/InvocableHandlerMethod.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="129" selection-start-line="129" selection-end-line="129" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/5.0.13.RELEASE/spring-web-5.0.13.RELEASE.jar!/org/springframework/web/context/request/AbstractRequestAttributes.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="20" selection-start-line="20" selection-end-line="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-webmvc/5.0.13.RELEASE/spring-webmvc-5.0.13.RELEASE.jar!/org/springframework/web/servlet/mvc/method/annotation/RequestMappingHandlerAdapter.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="130">
+          <caret line="576" selection-start-line="576" selection-end-line="576" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/tomcat/embed/tomcat-embed-core/8.5.39/tomcat-embed-core-8.5.39.jar!/javax/servlet/http/HttpSession.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="157">
+          <caret line="26" column="11" selection-start-line="26" selection-start-column="11" selection-end-line="26" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ida/controller/VerifyController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="380">
+          <caret line="36" column="23" selection-start-line="36" selection-start-column="23" selection-end-line="36" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/img/Cl.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/img/null.JPG">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-webmvc/5.0.13.RELEASE/spring-webmvc-5.0.13.RELEASE.jar!/org/springframework/web/servlet/HandlerExecutionChain.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="86" selection-start-line="86" selection-end-line="86" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ida/config/SecurityConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="627">
+          <caret line="48" column="30" selection-start-line="48" selection-start-column="30" selection-end-line="48" selection-end-column="30" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/ida/config/MyMvcConfig.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="13" column="78" selection-start-line="13" selection-start-column="78" selection-end-line="13" selection-end-column="78" />
+        <state relative-caret-position="181">
+          <caret line="36" column="61" lean-forward="true" selection-start-line="36" selection-start-column="61" selection-end-line="36" selection-end-column="61" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/ida/controller/RouterController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="67" column="22" selection-start-line="67" selection-start-column="22" selection-end-line="67" selection-end-column="22" />
+        <state relative-caret-position="171">
+          <caret line="12" column="35" selection-start-line="12" selection-start-column="35" selection-end-line="12" selection-end-column="35" />
           <folding>
-            <element signature="e#530#531#0" expanded="true" />
-            <element signature="e#582#583#0" expanded="true" />
-            <element signature="e#1856#1857#0" expanded="true" />
-            <element signature="e#1908#1909#0" expanded="true" />
+            <element signature="e#411#412#0" expanded="true" />
+            <element signature="e#441#442#0" expanded="true" />
+            <element signature="e#524#525#0" expanded="true" />
+            <element signature="e#576#577#0" expanded="true" />
+            <element signature="e#665#666#0" expanded="true" />
+            <element signature="e#712#713#0" expanded="true" />
+            <element signature="e#791#792#0" expanded="true" />
+            <element signature="e#840#841#0" expanded="true" />
+            <element signature="e#919#920#0" expanded="true" />
+            <element signature="e#968#969#0" expanded="true" />
+            <element signature="e#1045#1046#0" expanded="true" />
+            <element signature="e#1098#1099#0" expanded="true" />
+            <element signature="e#1177#1178#0" expanded="true" />
+            <element signature="e#1229#1230#0" expanded="true" />
+            <element signature="e#1308#1309#0" expanded="true" />
+            <element signature="e#1355#1356#0" expanded="true" />
+            <element signature="e#1448#1449#0" expanded="true" />
+            <element signature="e#1502#1503#0" expanded="true" />
+            <element signature="e#1589#1590#0" expanded="true" />
+            <element signature="e#1642#1643#0" expanded="true" />
+            <element signature="e#1713#1714#0" expanded="true" />
+            <element signature="e#1764#1765#0" expanded="true" />
+            <element signature="e#1845#1846#0" expanded="true" />
+            <element signature="e#1884#1885#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/ida/controller/UserController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ida/config/LoginInterceptor.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="309">
-          <caret line="178" column="30" selection-start-line="178" selection-start-column="30" selection-end-line="178" selection-end-column="30" />
+        <state relative-caret-position="-432">
+          <caret line="30" column="71" selection-start-line="30" selection-start-column="71" selection-end-line="30" selection-end-column="71" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/views/updatePassword.html">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="38">
-          <caret line="2" column="6" lean-forward="true" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
+        <state relative-caret-position="304">
+          <caret line="16" column="32" selection-start-line="16" selection-start-column="32" selection-end-line="16" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="20" column="44" selection-start-line="20" selection-start-column="44" selection-end-line="20" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ida/controller/UserController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2133">
+          <caret line="167" column="33" lean-forward="true" selection-start-line="167" selection-start-column="33" selection-end-line="167" selection-end-column="33" />
           <folding>
-            <element signature="n#style#0;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="imports" expanded="true" />
+            <element signature="e#11971#11972#0" expanded="true" />
+            <element signature="e#11995#11996#0" expanded="true" />
           </folding>
         </state>
       </provider>

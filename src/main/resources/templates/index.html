@@ -21,7 +21,7 @@
     <div sec:authorize="isAuthenticated()">
         <a>
             用户名：<span sec:authentication="name"></span>
-          <!--  <a th:href="@{/toLogout}">退出登录</a>-->
+            <a th:href="@{/user/toLogout}">退出登录</a>
             <a th:href="@{/logout}">注销</a>
 
             <!-- 上传/更换头像-->
@@ -72,15 +72,3 @@
 </div>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-

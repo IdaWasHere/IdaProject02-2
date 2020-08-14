@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import org.thymeleaf.util.StringUtils;
 
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -70,7 +71,7 @@ public class UserController {
         return "login";
     }
 
-    @PostMapping("/login")
+    @GetMapping(value = "/login")
     public String login(
             //@RequestParam为了保险接收参数 Model model为了回显数据
             @RequestParam("username") String username,
@@ -97,8 +98,27 @@ public class UserController {
 
       if (StringUtils.isEmpty(code) || !randomCode.equals(code)){
           model.addAttribute("msg", "验证码错误！");
-          return "login";
+          return "redirect:/user/toLogin";
       }
+
+      //忘记密码，七天免登
+        if (username == null && password == null){
+            Cookie[] cookies = request.getCookies();
+            for(Cookie cookie : cookies){
+                if(cookie.getName().equals("cookie_username")){
+                    username = cookie.getValue();
+                    break;
+                }
+            }
+            for(Cookie cookie : cookies){
+                if(cookie.getName().equals("cookie_password")){
+                    password = cookie.getValue();
+                    break;
+                }
+            }
+        }
+
+
 
         UsernamePasswordAuthenticationToken usernamePasswordAuthenticationToken = new UsernamePasswordAuthenticationToken(username,password);
 
@@ -110,7 +130,6 @@ public class UserController {
         session.setAttribute("SPRING_SECURITY_CONTEXT",SecurityContextHolder.getContext());
         //修改头像需要用到username
         session.setAttribute("username",username);
-    //    model.addAttribute("username",username);
 
         //默认头像
         String filename="C:\\Users\\86136\\02trading\\src\\main\\resources\\static\\img\\"+ username +".jpg";
@@ -122,53 +141,45 @@ public class UserController {
         }
 
 
-     /*  //记住密码
+       //记住密码
         String remember = request.getParameter("remember");
         if (remember!=null) {
             //将登录用户信息保存到session中
             session.setAttribute("findUser", findUser);
             //保存cookie,实现自动登录
             Cookie cookie_username = new Cookie("cookie_username", username);
+            Cookie cookie_password= new Cookie("cookie_password", password);
             //设置cookie的持久化时间，7天
             cookie_username.setMaxAge(7 * 24 * 60 * 60);
+            cookie_password.setMaxAge(7 * 24 * 60 * 60);
             // 设置为当前项目下都携带这个cookie
-            cookie_username.setPath(request.getContextPath());
+            cookie_username.setPath("/");
+            cookie_password.setPath("/");
             // 向客户端发送cookie
             response.addCookie(cookie_username);
-        }*/
+            response.addCookie(cookie_password);
+        }
         return "index";
-
-
-
-        //具体业务
-      /*  if (!StringUtils.isEmpty(username) && findPassword.equals(password) ) {
-            if (!StringUtils.isEmpty(code) && code.equals(random_code)) {
-                //登陆成功，跳转到首页
-                return "index";
-            } else {
-                model.addAttribute("msg", "验证码错误！");
-                return "login";
-            }
-        } else {
-            //告诉用户，登录失败
-            model.addAttribute("msg", "用户名/密码错误！");
-            return "login";
-        }*/
     }
 
-  /*  //退出登录
-    @RequestMapping("toLogout")
+
+    //退出登录
+    @GetMapping("/toLogout")
     public String logout(HttpSession session,HttpServletRequest request ,HttpServletResponse response){
-        //删除session里面的用户信息
-        session.removeAttribute("findUser");
         //保存cookie,实现自动登录
-        Cookie cookie_usrname = new Cookie("cookie_username","");
+        Cookie cookie_username = new Cookie("cookie_username","");
+        Cookie cookie_password = new Cookie("cookie_password","");
         //设置cookie的持久化时间，0
-        cookie_usrname.setMaxAge(0);
+        cookie_username.setMaxAge(0);
+        cookie_password.setMaxAge(0);
         //设置当前项目下都携带这个cookie
-        response.addCookie(cookie_usrname);
-        return "login";
-    }*/
+        cookie_username.setPath("/");
+        cookie_password.setPath("/");
+        // 向客户端发送cookie
+        response.addCookie(cookie_username);
+        response.addCookie(cookie_password);
+        return "redirect:/user/toLogin";
+    }
 
     @PostMapping("/forgetPassword")
     public String forgetPassword(HttpServletRequest request,Model model){
@@ -312,4 +323,11 @@ public class UserController {
             return "上传失败，空文件";
         }
     }
+
+    //为了进入user/login的控制层，免登权限实现，即使游客模式也能进行
+    @RequestMapping("/")
+    public String toLoginIndex(){
+        return "redirect:/user/login";
+    }
+
 }

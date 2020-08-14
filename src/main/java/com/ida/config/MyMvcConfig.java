@@ -9,6 +9,7 @@ public class MyMvcConfig implements WebMvcConfigurer {
     @Override
     public void addViewControllers(ViewControllerRegistry registry) {
         registry.addViewController("/register.html").setViewName("register");
+        registry.addViewController("/index.html").setViewName("index");
         registry.addViewController("/login.html").setViewName("login");
         registry.addViewController("/findPassword.html").setViewName("findPassword");
         registry.addViewController("/updatePassword.html").setViewName("updatePassword");
@@ -23,15 +24,15 @@ public class MyMvcConfig implements WebMvcConfigurer {
              registry.addResourceHandler("/img/**").addResourceLocations("file:/C:/Users/86136/02trading/src/main/resources/static/img/");
         }
 
-/*    @Autowired
+    @Autowired
     private LoginInterceptor loginHandlerInterceptor;
     //注册拦截器
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
         InterceptorRegistration ir = registry.addInterceptor(loginHandlerInterceptor).addPathPatterns("/**")
-                .excludePathPatterns("/login.html", "/user/login","/getVerity","/sendMail","/forgetPassword","/register","/","/findPassword.html",
-                                     "/static/**","/user/pic",
-                                     "/level1/*","/level2/*","/level3/*"
-                                     );
-    }*/
+                .excludePathPatterns("/login.html", "/user/toLogin","/user/login","/getVerity","/sendMail","/user/forgetPassword","/findPassword.html",
+                        "/user/register","user/toBack","/user/toLogout","user/updatePassword",
+                        "/static/**","/user/pic"
+                );
+    }
 }

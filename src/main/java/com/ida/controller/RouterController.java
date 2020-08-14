@@ -10,7 +10,7 @@ public class RouterController {
 
     /*根路径*/
     // 记得导入thymeleaf依赖，来识别
-    @RequestMapping({"/","/index.html"})
+    @RequestMapping({"/index.html"})
     public String index(){
         return "index";
     }
