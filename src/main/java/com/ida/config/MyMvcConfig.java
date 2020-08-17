@@ -24,15 +24,15 @@ public class MyMvcConfig implements WebMvcConfigurer {
              registry.addResourceHandler("/img/**").addResourceLocations("file:/C:/Users/86136/02trading/src/main/resources/static/img/");
         }
 
-    @Autowired
+  /*  @Autowired
     private LoginInterceptor loginHandlerInterceptor;
     //注册拦截器
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
         InterceptorRegistration ir = registry.addInterceptor(loginHandlerInterceptor).addPathPatterns("/**")
                 .excludePathPatterns("/login.html", "/user/toLogin","/user/login","/getVerity","/sendMail","/user/forgetPassword","/findPassword.html",
-                        "/user/register","user/toBack","/user/toLogout","user/updatePassword",
+                        "/user/register","user/toBack","/user/toLogout","user/updatePassword","/register.html",
                         "/static/**","/user/pic"
                 );
-    }
+    }*/
 }

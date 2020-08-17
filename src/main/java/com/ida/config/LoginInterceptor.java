@@ -1,3 +1,4 @@
+/*
 package com.ida.config;
 
 import com.ida.dao.UserDao;
@@ -71,3 +72,4 @@ public class LoginInterceptor implements HandlerInterceptor {
             return true;
     }
 }
+*/
